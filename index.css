@@ -1,0 +1,93 @@
+* {
+  border: 1px solid red;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "ralewaybold";
+  src: url(./fonts/Raleway-ExtraBold.woff) format(woff);
+  src: url(./fonts/Raleway-ExtraBold.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: "raleway";
+  src: url(./fonts/Raleway-Regular.woff) format(woff);
+  src: url(./fonts/Raleway-Regular.woff2) format(woff2);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  min-width: 800px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: cover;  
+}
+
+body::before {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    pointer-events: none; 
+}
+
+body:hover::before {
+    background-color: rgba(255, 255, 255, 0.415);
+}
+
+h1 {
+  font-family: "ralewaybold";
+  font-size: 116px;
+  position: static;
+  text-align: center;
+  margin: 0;
+  white-space: pre-line;
+}
+
+h1:after {
+  content: "*";
+}
+
+h1:hover::before {
+  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
+  white-space: pre;
+  font-family: "raleway";
+  position: absolute;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 0px 6px black; 
+  border-radius: 20px;
+  text-align: left;
+  font-size: 35px;
+  top: 160px;
+  right: 40px;
+}
+
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
